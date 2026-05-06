@@ -73,7 +73,7 @@ export const mockPosts: PostType[] = [
         createdAt: new Date(Date.now() - 3600000),
         likeCount: 42,
         likedByUser: false,
-        commentCount: 3,
+        commentCount: 2,
         comments: mockComments,
     },
     {
@@ -85,7 +85,7 @@ export const mockPosts: PostType[] = [
         createdAt: new Date(Date.now() - 86400000),
         likeCount: 128,
         likedByUser: true,
-        commentCount: 8,
+        commentCount: 1,
         comments: [
             {
                 id: generateId(),
@@ -105,7 +105,7 @@ export const mockPosts: PostType[] = [
         createdAt: new Date(Date.now() - 172800000),
         likeCount: 267,
         likedByUser: false,
-        commentCount: 15,
+        commentCount: 0,
         comments: [],
     },
 ];

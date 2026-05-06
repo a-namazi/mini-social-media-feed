@@ -1,4 +1,5 @@
-import React from 'react';
+"use client"
+import React, { useState } from 'react';
 import { PostType } from '../models';
 import { Avatar } from './Avatar';
 import { CommentSection } from './CommentSection';
@@ -11,6 +12,19 @@ interface PostProps {
 }
 
 export const Post: React.FC<PostProps> = ({ post, onLike, onAddComment }) => {
+
+    const [loading, setLoading] = useState(true);
+
+
+    const handleAddComment = async (postId: string, content: string) => {
+        try {
+            setLoading(true)
+            await onAddComment(postId, content);
+            setLoading(false)
+        } catch (error) {
+            console.error('Error adding comment:', error);
+        }
+    };
 
     return (
         <article className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200 p-4 mb-4">
@@ -69,7 +83,7 @@ export const Post: React.FC<PostProps> = ({ post, onLike, onAddComment }) => {
                     <CommentSection
                         comments={post.comments}
                         postId={post.id}
-                        onAddComment={onAddComment}
+                        onAddComment={handleAddComment}
                     />
                 </div>
             </div>
