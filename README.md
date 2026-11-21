@@ -28,7 +28,7 @@ A modern, feature-rich social feed application inspired by X.com (formerly Twitt
 
 1. **Clone the repository**
 ```
-git clone <your-repo-url>
+git clone https://github.com/a-namazi/mini-social-media-feed.git
 cd social-feed
 ```
 2. **Install dependencies**
